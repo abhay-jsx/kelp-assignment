@@ -8,7 +8,7 @@ const { userService } = require('../services');
 const getUserStats = catchAsync(async (req, res) => {
   const jsonArray = await userService.getUserStats();
   if (!jsonArray) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
+    throw new ApiError(httpStatus.NOT_FOUND, 'No Users Found');
   }
   res.send(jsonArray);
 });
