@@ -4,7 +4,6 @@ const ApiError = require('../utils/ApiError');
 const fs = require('fs');
 const csvParser = require('csv-parser');
 
-const fastcsv = require('fast-csv');
 /**
  * Get user by id
  * @param {ObjectId} id
@@ -45,7 +44,7 @@ const getUserStats = async () => {
 
           const result = await User.AddUser(
            
-            {name:`${firstName} ${lastName}`,age,address, additional_info}
+            {name:`${firstName} ${lastName}`,age,address, additional_info,gender}
           );
           jsonArray.push({
             name: `${firstName} ${lastName}`,

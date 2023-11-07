@@ -11,11 +11,6 @@ class User extends Model {
     const result = await User.query().insert(data).returning('*');
     return result;
   }
-
-  static async getRecordCount(startingAge, endingAge) {
-    const result = await User.query().whereBetween('age', [startingAge, endingAge]).count();
-    return result;
-  }
   static async getAgeDistribution() {
     const distribution = await User.query()
     .select(
@@ -32,36 +27,6 @@ class User extends Model {
     return distribution;
 }
 }
-// User.getAgeDistribution()
-//   .then((distribution) => {
-//     const ageGroups = {
-//       '< 20': 0,
-//       '20 to 40': 0,
-//       '40 to 60': 0,
-//       '> 60': 0,
-//     };
-
-
-
-//     const totalUsers = Object.values(ageGroups).reduce((acc, count) => acc + count, 0);
-
-//     const distributionReport = {};
-//     for (const group in ageGroups) {
-//       const percentage = (ageGroups[group] / totalUsers) * 100;
-//       distributionReport[group] = percentage.toFixed(2);
-//     }
-
-//     console.log('Age-Group % Distribution');
-//     for (const group in distributionReport) {
-//       console.log(`${group}: ${distributionReport[group]}`);
-//     }
-//   })
-//   .catch((error) => {
-//     console.error('Error fetching age distribution:', error);
-//   })
-//   .finally(() => {
-//     knex.destroy();
-//   });
 module.exports = User;
 
 

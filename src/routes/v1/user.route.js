@@ -5,6 +5,6 @@ const router = express.Router();
 
 router
   .route('/convert')
-  .post(userController.getUser);
+  .post(userController.getUserStats);
 
 module.exports = router;
