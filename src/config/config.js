@@ -6,7 +6,6 @@ dotenv.config({ path: path.join(__dirname, '../../.env') });
 
 const envVarsSchema = Joi.object()
   .keys({
-    CSV_FILE_PATH:Joi.string().required(),
     PORT: Joi.number().default(3000),
     PG_HOST: Joi.string().required(),
     PG_PORT: Joi.number().default(5432),
@@ -25,7 +24,6 @@ if (error) {
 module.exports = {
 
   port: envVars.PORT,
-  csvpath: envVars.CSV_FILE_PATH,
   pg: {
     host: envVars.PG_HOST,
     user: envVars.PG_USER,

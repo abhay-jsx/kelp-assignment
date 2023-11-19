@@ -1,5 +1,3 @@
-// Update with your config settings.
-
 const config = require("./src/config/config");
 const path = require('path');
 /**
@@ -17,9 +15,7 @@ module.exports = {
       port: config.pg.port,
       host: config.pg.host,
     },
-    // migrations: {
-    //   directory: path.join(__dirname, '/migrations'), // Specify the directory for your migrations
-    // },
+
     pool: {
       min: 2,
       max: 10

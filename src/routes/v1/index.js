@@ -1,13 +1,13 @@
 const express = require('express');
-const userRoute = require('./user.route');
+const logRoute = require('./logs.route');
 
 
 const router = express.Router();
 
 const defaultRoutes = [
   {
-    path: '/api',
-    route: userRoute,
+    path: '/v1',
+    route: logRoute,
   },
 ];
 
